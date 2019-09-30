@@ -8,13 +8,14 @@ namespace PrintManager
         static bool work = true;
         static void Main(string[] args)
         {
-            var DocumentTypes = new[]
+            var DocumentTypes = new List<DocumentType>
             {
                 new DocumentType("txt", PaperSize.A3, 20),
                 new DocumentType("pdf", PaperSize.A1, 150),
                 new DocumentType("doc", PaperSize.A2, 70),
                 new DocumentType("docx", PaperSize.A4, 50),
             };
+            Dispatcher.DocumentTypes = DocumentTypes;
             while (work)
             {
                 Menu();
